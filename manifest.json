@@ -1,0 +1,25 @@
+{
+    "name":"Chrome Stories",
+    "version":"1.0",
+    "manifest_version":2,
+    "background":{
+        "scripts":["jcpbackground.js"]
+    },
+    "permissions": ["tabs","<all_urls>",
+        "http://*/*",
+        "https://*/*",
+        "http://*/",
+        "https://*/"
+    ],
+    "browser_action": {
+        "default_icon": "assets/G.png",
+        "default_popup": "pop.html"
+    },
+    
+    "content_scripts":[
+        {
+            "matches":["<all_urls>"],
+            "js":["jcpcontent.js"]
+        }
+    ]
+}
